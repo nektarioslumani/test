@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="script.js">
+<body>
+</head>
+<body>
+    <script>
+let apin = 1234;//το σωστό pin
+let balance = 1000;//αρχικό ποσό
+let cnt = 0;//μετρητής προσπαθείων
+
+while (cnt < 3){
+
+
+let enterpin = parseInt (prompt("enter your pin"));//ζητάει το pin
+if (enterpin === apin);//;έλενχος αν το pin είναι σωστό
+    
+let choise = parseInt(prompt("1 check balance: 2 deposit: 3 withdraw: 4 exit: "))//μενού
+
+if (choise === 1){//έλενχος υπολοίπου
+    alert("το υπόλοιπο σας είνα: ${balance}");
+    
+}
+else if (choise === 2){//κατάθεση
+    let deposit = parseFloat(prompt("ποσό κτάθεσης:"));
+    if (deposit > 0){
+        balance += deposit;
+        alert ("κατάθεση επιτυχής: ${balance}")
+    } else {
+alert("μη έγκυρο ποσό:");
+    }
+
+} else if (choise === 3){//ανάληψη
+    let withdraw = parseFloat(prompt("ποσό ανάληψης:"));
+    if (withdraw > 0 && withdraw <= balance) {
+        balance -= withdraw;
+        alert("ανάληψη επιτυχής:νέο υπόλοιπο: ${balance}");
+
+    } else {
+        alert("μη ανεπαρές υπόλοιπο");
+    }
+} else if (choise === 4){
+    alert("παρακαλώ πάρτε την κάρτα σας");
+    break;
+
+}
+ 
+             
+}else {
+    cnt++;
+    alert(`Λάθος PIN! Σας απομένουν ${3 - cnt} προσπάθειες.`);
+        if (cnt === 3) {
+     alert("Ο λογαριασμός σας κλειδώθηκε λόγω πολλών αποτυχημένων προσπαθειών.");
+        }
+        }
+        
+
+    </script>
+    
+</body>
+</html>
+
+
+
+    
+
